@@ -1,0 +1,13 @@
+# 渲染截图（本地 QA 产物，不入库）
+preview/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# 临时 QA 页（开发时用，不提交）
+_qa.html
+_fonttest.html
