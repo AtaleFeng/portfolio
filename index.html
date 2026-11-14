@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>肖丰 · Serene — 独立开发者 / AI 工程 · 实时图形 · 量化系统</title>
+<meta name="description" content="肖丰（Serene）的作品集：AI 多智能体编排、本地语义记忆、Godot 像素游戏、量化交易系统。带真实 token 账本与可交互终端的街机式作品集。" />
+<meta name="theme-color" content="#0a0714" />
+<meta property="og:title" content="肖丰 · Serene — 独立开发者" />
+<meta property="og:description" content="AI 工程 · 实时图形 · 量化系统。PLAYER 1 ▸ READY" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="assets/fonts/press-start-2p-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="crt" aria-hidden="true"></div>
+
+<div id="boot" class="boot" role="dialog" aria-label="开机自检">
+  <pre id="bootLog" class="boot-log" aria-hidden="true"></pre>
+  <p class="boot-hint">PRESS ANY KEY <span class="caret">▸</span></p>
+  <p class="boot-note">点任意处跳过 · <span id="bootSound">声音默认关闭</span></p>
+</div>
+
+<a class="skip-link" href="#works">跳到作品</a>
+
+<header class="nav">
+  <a class="nav-logo" href="#top">
+    <span class="nav-logo-mark" aria-hidden="true"></span>
+    <span>NASEEM<span class="nav-logo-dim">/SERENE</span></span>
+  </a>
+  <nav class="nav-links" aria-label="主导航">
+    <a href="#works">WORKS</a>
+    <a href="#ledger">LEDGER</a>
+    <a href="#terminal">TERMINAL</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <button id="soundBtn" class="sound-btn" type="button" aria-pressed="false">
+    <span aria-hidden="true">♪</span> <span class="sound-label">SOUND OFF</span>
+  </button>
+</header>
+
+<main>
+
+  <section id="top" class="hero">
+    <p class="kicker">PLAYER 1 <span aria-hidden="true">▸</span> READY</p>
+    <h1 class="hero-name">
+      肖丰<span class="hero-name-en">Serene</span>
+    </h1>
+    <p class="lede">
+      独立开发者。白天写 <em>AI 智能体编排</em>，深夜磨 <em>像素游戏</em> 和 <em>量化系统</em>。
+      喜欢把复杂的东西做成一按就开的机器——然后让它整夜自己跑。
+    </p>
+
+    <div class="panel hiscore" aria-labelledby="hiscoreLabel">
+      <div class="hiscore-head">
+        <p id="hiscoreLabel" class="hiscore-label">HI-SCORE <span aria-hidden="true">·</span> TOKENS BURNED</p>
+        <p class="hiscore-src">本机 Hermes 账本 · 只读导出</p>
+      </div>
+
+      <p id="odo" class="odo" aria-live="polite" aria-atomic="true">
+        <span class="odo-skeleton">···</span>
+      </p>
+
+      <p id="odoSub" class="hiscore-sub"></p>
+
+      <div class="chart-bar">
+        <div class="seg" role="group" aria-label="时间范围">
+          <button class="seg-btn is-on" type="button" data-range="90" aria-pressed="true">90D</button>
+          <button class="seg-btn" type="button" data-range="30" aria-pressed="false">30D</button>
+          <button class="seg-btn" type="button" data-range="all" aria-pressed="false">ALL</button>
+        </div>
+        <p class="chart-legend" id="chartLegend"></p>
+      </div>
+
+      <div id="chart" class="chart" role="group" aria-label="每日 token 用量柱状图"></div>
+
+      <p id="chartHint" class="chart-hint">
+        <span aria-hidden="true">←/→</span> 逐日查看柱子 · 点柱子看当天明细 · 悬停可读数值
+      </p>
+      <div id="dayPanel" class="day-panel" hidden></div>
+    </div>
+  </section>
+
+  <section id="works" class="section" aria-labelledby="worksTitle">
+    <div class="section-head">
+      <h2 id="worksTitle" class="section-title">CARTRIDGE RACK<span class="section-dot" aria-hidden="true"></span></h2>
+      <p class="section-sub">六张卡带 · 三张能摸到，三张还在焊板子</p>
+    </div>
+
+    <div class="rack">
+
+      <article class="card" data-seed="11" data-palette="cyan">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">WIP</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">01 <span aria-hidden="true">/</span> GODOT METROIDVANIA</p>
+          <h3 class="card-title">starhusk</h3>
+          <p class="card-desc">Godot 4 的 2D 银河城：手感参数集中管理、灰盒关卡先行、像素美术与着色器特效分层接入。目前在做可玩灰盒。</p>
+          <ul class="tags"><li>Godot 4</li><li>GDScript</li><li>像素美术</li><li>关卡设计</li></ul>
+          <p class="card-foot"><span class="badge">开发中 · 未公开</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-seed="27" data-palette="amber">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">LIVE</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">02 <span aria-hidden="true">/</span> AGENT ORCHESTRATION</p>
+          <h3 class="card-title">Hermes Fleet</h3>
+          <p class="card-desc">多智能体编排层：看板派卡、profile 角色化（思考者 / 执行者 / 守护者）、共享记忆与对抗审查闸门。任务可以整夜自己跑完，早上看时间线。</p>
+          <ul class="tags"><li>Python</li><li>LLM 编排</li><li>MCP</li><li>Kanban</li></ul>
+          <p class="card-foot"><span class="badge badge-live">运行中</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-seed="43" data-palette="violet">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">LIVE</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">03 <span aria-hidden="true">/</span> LOCAL MEMORY</p>
+          <h3 class="card-title">Hindsight</h3>
+          <p class="card-desc">本地语义记忆系统：自动抽取事实、跨会话检索与反思，配 launchd 自启、健康哨兵和写入成功率告警。记忆留在自己机器上。</p>
+          <ul class="tags"><li>语义检索</li><li>Docker</li><li>launchd</li><li>运维告警</li></ul>
+          <p class="card-foot"><span class="badge badge-live">运行中</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-seed="59" data-palette="magenta">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">LIVE</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">04 <span aria-hidden="true">/</span> QUANT EXECUTION</p>
+          <h3 class="card-title">HFT-Trend</h3>
+          <p class="card-desc">永续合约量化系统：策略回测 → 滑点口径建模 → 影子账户一致性校验 → 实时执行。细节不公开，收益数字不吹。</p>
+          <ul class="tags"><li>Python</li><li>回测</li><li>实时执行</li><li>数据校验</li></ul>
+          <p class="card-foot"><span class="badge">细节不公开</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-seed="73" data-palette="green">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">LIVE</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">05 <span aria-hidden="true">/</span> KNOWLEDGE PIPELINE</p>
+          <h3 class="card-title">Reading Pipeline</h3>
+          <p class="card-desc">英文精读流水线：丢一篇文章进去，自动产出中文摘要、生词表、长难句拆解和输出练习，归档进 Obsidian 知识库。</p>
+          <ul class="tags"><li>Python</li><li>LLM</li><li>Obsidian</li><li>自动化</li></ul>
+          <p class="card-foot"><span class="badge badge-live">日常在用</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-seed="97" data-palette="cyan">
+        <div class="card-media">
+          <canvas class="card-canvas" aria-hidden="true" width="96" height="60"></canvas>
+          <span class="card-status">v1</span>
+        </div>
+        <div class="card-body">
+          <p class="card-idx">06 <span aria-hidden="true">/</span> THIS SITE</p>
+          <h3 class="card-title">NASEEM Bios</h3>
+          <p class="card-desc">你正在看的这一页：纯静态、零构建、零依赖的街机外壳，上面的 token 账本是本机日志的真数据，不是装饰图。</p>
+          <ul class="tags"><li>HTML/CSS/JS</li><li>WebAudio</li><li>可访问性</li></ul>
+          <p class="card-foot"><span class="badge">v1 · 手搓</span></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="ledger" class="section" aria-labelledby="ledgerTitle">
+    <div class="section-head">
+      <h2 id="ledgerTitle" class="section-title">MODEL LEDGER<span class="section-dot" aria-hidden="true"></span></h2>
+      <p class="section-sub">谁在替我烧 token —— 直接读账本，不做美化</p>
+    </div>
+
+    <div class="panel ledger-wrap">
+      <table class="ledger">
+        <caption class="sr-only">按消耗 token 排序的模型用量表</caption>
+        <thead>
+          <tr>
+            <th scope="col">模型</th>
+            <th scope="col">渠道</th>
+            <th scope="col" class="num">请求</th>
+            <th scope="col" class="num">输入</th>
+            <th scope="col" class="num">输出</th>
+            <th scope="col" class="num">缓存</th>
+            <th scope="col" class="num">总计</th>
+            <th scope="col" class="share-col">占比</th>
+          </tr>
+        </thead>
+        <tbody id="ledgerBody">
+          <tr><td colspan="8" class="ledger-empty">账本加载中…</td></tr>
+        </tbody>
+      </table>
+      <p id="ledgerFoot" class="ledger-foot"></p>
+    </div>
+  </section>
+
+  <section id="terminal" class="section" aria-labelledby="termTitle">
+    <div class="section-head">
+      <h2 id="termTitle" class="section-title">TERMINAL<span class="section-dot" aria-hidden="true"></span></h2>
+      <p class="section-sub">这台机器可以问话 · 敲 <code>help</code> 领路</p>
+    </div>
+
+    <div class="panel term">
+      <div id="termOut" class="term-out" role="log" aria-live="polite" aria-label="终端输出">
+        <p class="term-line term-sys">NASEEM shell — 输入 <b>help</b> 查看命令。</p>
+      </div>
+      <form id="termForm" class="term-form" autocomplete="off">
+        <label class="sr-only" for="termInput">终端命令</label>
+        <span class="term-prompt" aria-hidden="true">serene@night-shift:~$</span>
+        <input id="termInput" class="term-input" type="text" name="cmd" spellcheck="false" autocapitalize="off" placeholder="help" />
+        <button class="term-run" type="submit">RUN</button>
+      </form>
+      <div class="term-chips" id="termChips">
+        <button type="button" data-cmd="help">help</button>
+        <button type="button" data-cmd="whoami">whoami</button>
+        <button type="button" data-cmd="works">works</button>
+        <button type="button" data-cmd="stats">stats</button>
+        <button type="button" data-cmd="stack">stack</button>
+        <button type="button" data-cmd="contact">contact</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" aria-labelledby="contactTitle">
+    <div class="section-head">
+      <h2 id="contactTitle" class="section-title">1P CONTINUE?<span class="section-dot" aria-hidden="true"></span></h2>
+      <p class="section-sub">想聊 AI 工程、游戏、量化，或者一起做点什么</p>
+    </div>
+
+    <ul class="contact-list">
+      <li>
+        <a class="contact-item" href="https://github.com/AtaleFeng" rel="me noopener" target="_blank">
+          <span class="contact-key">GITHUB</span>
+          <span class="contact-val">@AtaleFeng</span>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-item" href="mailto:hello@example.com">
+          <span class="contact-key">EMAIL</span>
+          <span class="contact-val">hello@example.com</span>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    </ul>
+    <p class="contact-note">邮箱是占位符，换成你自己的地址（在 <code>index.html</code> 里改一行）。</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-left">NASEEM BIOS <span class="foot-sep" aria-hidden="true">·</span> <span id="year">2026</span></p>
+  <p class="foot-right">
+    <button id="reboot" class="reboot" type="button">REBOOT 开机动画</button>
+    <span class="foot-sep" aria-hidden="true">·</span>
+    <span>纯静态 · 零依赖 · 手搓</span>
+  </p>
+</footer>
+
+<script src="assets/stats.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
